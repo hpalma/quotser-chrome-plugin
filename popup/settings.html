@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&amp;display=swap"
+            rel="stylesheet"/>
+
+    <style>
+        body, table tr td {
+            font-size: 14px;
+            font-family: Urbanist, sans-serif;
+        }
+
+        #back {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="width: 200px">
+<table width="100%">
+    <tr>
+        <td colspan="2" class="no-border settings" style="text-align: right;padding: 0;height: 3px"><img id="back" src="/images/back.png" width="15px"/></td>
+    </tr>
+    <tr>
+        <td><input id="importAsPrivate" type="checkbox"/></td>
+        <td>Import as Private&nbsp;&nbsp;<img src="/images/question.png" style="cursor: pointer" width="15px" title="Always import quotes as private"/></td>
+    </tr>
+</table>
+<script src="settings.js"></script>
+</body>
+</html>
