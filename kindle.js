@@ -23,8 +23,5 @@ function importHighlights(sendResponse) {
         highlights.push(highlight.textContent);
     });
 
-    console.log('Title: ' + title);
-    console.log('Author: ' + author);
-
     sendResponse({title: title, author: author, highlights: highlights});
 }
