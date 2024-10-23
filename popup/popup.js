@@ -22,6 +22,7 @@ function importFromKindle() {
         ) {
             (async () => {
                 const quotes = await chrome.tabs.sendMessage(tabs[0].id, {function: "importHighlights"});
+
                 sendQuotes(quotes);
             })();
         } else {
@@ -34,14 +35,15 @@ function importFromKindle() {
 
 async function sendQuotes(quotes) {
     const token = await chrome.storage.local.get("token");
+    const importAsPrivate = (await chrome.storage.local.get("settings")).settings.importAsPrivate;
 
     fetch('http://localhost:8000/api/quotes/import', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${token.token}`
         },
-        body: JSON.stringify(quotes)
+        body: JSON.stringify({'importAsPrivate': importAsPrivate, 'data': quotes})
     })
         .then(response => {
             if (!response.ok) {

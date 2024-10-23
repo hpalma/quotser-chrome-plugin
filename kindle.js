@@ -15,7 +15,7 @@ function importHighlights(sendResponse) {
     title = title.replace(/\(.*?\)/g, '').trim();
 
     let author = document.querySelector('p.kp-notebook-metadata.a-spacing-none').textContent;
-    author = author.slice(0, author.indexOf(','));
+    author = author.split(',')[0];
 
     let highlightElements = document.querySelectorAll('#highlight');
     let highlights = [];
