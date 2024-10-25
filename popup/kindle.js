@@ -36,7 +36,9 @@ async function sendQuotes(quotes) {
             }
 
             response.json().then(json => {
-                alert(json)
+                document.getElementById('success').innerHTML = '<a href="#">Go to imported quotes?</a>';
+                document.getElementById('success').style.display = 'block';
+                document.getElementById('success').data = 'http://localhost:8000/quotes?ids=' + btoa(json);
             });
         })
         .catch(error => {

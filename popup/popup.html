@@ -24,14 +24,29 @@
         .no-border {
             border-bottom: none;
         }
-        
+
         .settings img {
             cursor: pointer;
+        }
+
+        #error {
+            color: rgb(220 38 38);
+            display: none;
+        }
+
+        #success {
+            color: rgb(38, 220, 38);
+            display: none;
+        }
+
+        #success a {
+            color: rgb(38, 220, 38);
         }
     </style>
 </head>
 <body style="width: 200px">
-<span id="error" style="color: red;display: none"></span>
+<span id="error"></span>
+<span id="success"></span>
 <table width="100%">
     <tr>
         <td class="no-border settings" style="text-align: right;padding: 0;height: 3px"><img id="settings" src="/images/gear.png" width="15px"/></td>
