@@ -6,7 +6,6 @@ chrome.runtime.onMessage.addListener(
                 return;
             }
         }
-        sendResponse({farewell: "goodbye"});
     }
 );
 

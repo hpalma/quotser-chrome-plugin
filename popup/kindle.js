@@ -22,7 +22,7 @@ async function sendQuotes(quotes) {
     const token = await chrome.storage.local.get("token");
     const importAsPrivate = (await chrome.storage.local.get("settings")).settings.importAsPrivate;
 
-    fetch('http://localhost:8000/api/quotes/import', {
+    fetch(BASE_URL + 'api/quotes/import', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ async function sendQuotes(quotes) {
             response.json().then(json => {
                 document.getElementById('success').innerHTML = '<a href="#">Go to imported quotes?</a>';
                 document.getElementById('success').style.display = 'block';
-                document.getElementById('success').data = 'http://localhost:8000/quotes?ids=' + btoa(json);
+                document.getElementById('success').data = BASE_URL + 'quotes?ids=' + btoa(json);
             });
         })
         .catch(error => {

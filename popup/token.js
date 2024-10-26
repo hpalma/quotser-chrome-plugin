@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById("linkToToken").href = BASE_URL + "api-token";
+
     var form = document.getElementById("api-token-form")
     form.addEventListener('submit', function (e) {
         e.preventDefault();

@@ -8,6 +8,7 @@ chrome.storage.local.get("token").then((result) => {
 
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("success").addEventListener("click", successClick);
+    document.getElementById("saveQuote").addEventListener("click", saveQuote);
     document.getElementById("importFromKindle").addEventListener("click", importFromKindle);
     document.getElementById("settings").addEventListener("click", function () {
         document.location = '/popup/settings.html';
