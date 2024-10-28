@@ -1,16 +1,5 @@
 document.addEventListener('DOMContentLoaded', async function () {
     let settings = await chrome.storage.local.get("settings");
-
-    if (settings === undefined || Object.keys(settings).length === 0) {
-        chrome.storage.local.set(
-            {
-                'settings':
-                    {'importAsPrivate': true}
-            }
-        );
-        settings = await chrome.storage.local.get("settings");
-    }
-
     settings = settings.settings;
 
     document.getElementById("importAsPrivate").checked = settings.importAsPrivate;
