@@ -16,11 +16,13 @@ function importHighlights(sendResponse) {
     let author = document.querySelector('p.kp-notebook-metadata.a-spacing-none').textContent;
     author = author.split(',')[0];
 
+    let link = document.querySelector('a.kp-notebook-printable').href;
+
     let highlightElements = document.querySelectorAll('#highlight');
     let highlights = [];
     highlightElements.forEach(highlight => {
         highlights.push(highlight.textContent);
     });
 
-    sendResponse({title: title, author: author, highlights: highlights});
+    sendResponse({source: title, author: author, link: link, highlights: highlights});
 }
