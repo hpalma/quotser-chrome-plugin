@@ -16,3 +16,7 @@ chrome.storage.local.get('token', (result) => {
         chrome.action.setPopup({popup: 'popup/token.html'});
     }
 });
+
+chrome.runtime.onStartup.addListener( () => {
+    console.log(`onStartup()`);
+});
